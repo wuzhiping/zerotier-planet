@@ -3,6 +3,8 @@ zerotier planet
 
 https://www.zerotier.com
 
+https://ipv4.icanhazip.com
+
 ```code
 upstream zerotier {
   server 127.0.0.1:3443;
