@@ -42,3 +42,8 @@ server {
     return 301 https://$server_name$request_uri;
 }
 ```
+
+
+./data/zerotier/dist 目录下有个 planet和moon 文件
+
+admin/password
