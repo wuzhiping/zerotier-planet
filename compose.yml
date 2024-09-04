@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  planet:
+    image: shawoo/zerotier-planet:latest
+    restart: always
+    ports:
+      - 9994:9994
+      - 9994:9994/udp
+      - 3443:3443
+      - 3000:3000
+    environment:
+      - IP_ADDR4=[IPV4IP ADDRESS]
+      - IP_ADDR6=
+      - ZT_PORT=9994
+      - API_PORT=3443
+      - FILE_SERVER_PORT=3000
+    volumes:
+      - ./zerotier/dist:/app/dist
+      - ./zerotier/ztncui:/app/ztncui
+      - ./zerotier/one:/var/lib/zerotier-one
+      - ./zerotier/config:/app/config
