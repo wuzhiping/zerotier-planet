@@ -1,7 +1,8 @@
 # zerotier-planet
 zerotier planet
-## https://github.com/xubiaolin/docker-zerotier-planet
-## SideCar 
+## Planet Server
+https://github.com/xubiaolin/docker-zerotier-planet
+## SideCar SpeedTesting
 ```code
   openspeedtest:
     image: openspeedtest/latest
@@ -31,7 +32,8 @@ zerotier planet
       - openspeedtest
     network_mode: "service:openspeedtest"
 ```
-## https://github.com/crazygit/family-media-center/blob/master/docker-compose.openwrt.yml
+## VLAN
+https://github.com/crazygit/family-media-center/blob/master/docker-compose.openwrt.yml
 
 https://www.zerotier.com
 
