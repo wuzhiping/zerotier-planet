@@ -1,6 +1,37 @@
 # zerotier-planet
 zerotier planet
 ## https://github.com/xubiaolin/docker-zerotier-planet
+## SideCar 
+```code
+  openspeedtest:
+    image: openspeedtest/latest
+    #restart: always
+    cap_add:
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    network_mode: host
+    #ports:
+    #  - "9993:9993"
+    #  - "9993:9993/udp"
+
+  zerotier:
+    image: zerotier/zerotier
+    #network_mode: host
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    volumes:
+      #- ./zerotier/dist/planet:/var/lib/zerotier-one/planet
+      - ./zerotier-one:/var/lib/zerotier-one
+    command:
+      - 677a4f5bc655fd0a
+    depends_on:
+      - openspeedtest
+    network_mode: "service:openspeedtest"
+```
+## https://github.com/crazygit/family-media-center/blob/master/docker-compose.openwrt.yml
 
 https://www.zerotier.com
 
