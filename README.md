@@ -32,6 +32,27 @@ https://github.com/xubiaolin/docker-zerotier-planet
       - openspeedtest
     network_mode: "service:openspeedtest"
 ```
+
+```code
+  kuma:
+    image: louislam/uptime-kuma:1
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./kuma:/app/data
+    stdin_open: true
+    tty: true
+
+location ~ ^/(upload/logo1.png|status/abc|assets/index|assets/zh-CN|api/status-page/)  {
+           proxy_pass http://kuma:3001;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header Host $host;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_http_version 1.1;
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection "upgrade";
+}
+```
 ## C VLAN
 https://github.com/crazygit/family-media-center/blob/master/docker-compose.openwrt.yml
 
