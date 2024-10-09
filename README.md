@@ -1,5 +1,13 @@
 # zerotier-planet
 zerotier planet
+
+## API
+```code
+docker compose exec planet /bin/sh
+
+TOKEN=$(cat /var/lib/zerotier-one/authtoken.secret)
+curl -H "X-ZT1-Auth: $TOKEN" http://localhost:9994/status
+```
 ## A Planet Server
 https://github.com/xubiaolin/docker-zerotier-planet
 ## B SideCar SpeedTesting
