@@ -1,7 +1,8 @@
 # zerotier-planet
 zerotier planet
 
-## API
+## X API
+https://docs.zerotier.com/api/service/ref-v1/
 ```code
 docker compose exec planet /bin/sh
 
