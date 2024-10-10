@@ -9,6 +9,15 @@ docker compose exec planet /bin/sh
 TOKEN=$(cat /var/lib/zerotier-one/authtoken.secret)
 curl -H "X-ZT1-Auth: $TOKEN" http://localhost:9994/status
 ```
+## Caddyfile
+https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=17441241515868
+```code
+:1979 {
+    reverse_proxy /* http://localhost:9994 {
+
+    }
+}
+```
 ## A Planet Server
 https://github.com/xubiaolin/docker-zerotier-planet
 ## B SideCar SpeedTesting
