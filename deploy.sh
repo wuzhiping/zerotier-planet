@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CONTAINER_NAME="myztplanet"
-ZEROTIER_PATH="$(pwd)/data/zerotier"
+CONTAINER_NAME="zerotier-planet-1"
+ZEROTIER_PATH="$(pwd)/zerotier"
 CONFIG_PATH="${ZEROTIER_PATH}/config"
 DIST_PATH="${ZEROTIER_PATH}/dist"
 ZTNCUI_PATH="${ZEROTIER_PATH}/ztncui"
